@@ -1,4 +1,4 @@
-
+package carrinhoteste;
 
 import java.util.ArrayList;
 
@@ -7,5 +7,9 @@ public class Extrato {
     
     public Extrato(){
        movimentacao = new ArrayList<MovimentacaoFinanceira>();
+    }
+
+    public void inserirArray(MovimentacaoFinanceira aux){
+        movimentacao.add(aux);
     }
 }
