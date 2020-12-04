@@ -10,10 +10,7 @@ public class Despesa extends MovimentacaoFinanceira{
         this.numeroParcelas = numeroParcelas;
         imposto =  0.00;
     }
-
-    public String getCnpj(){
-        return cnpj;
-    }
+    
     @Override
     public double calcularImposto(){
         imposto = ((0.01*getValor())*numeroParcelas) + getTaxa();

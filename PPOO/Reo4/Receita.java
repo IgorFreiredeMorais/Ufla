@@ -11,9 +11,6 @@ public class Receita extends MovimentacaoFinanceira {
         imposto = 0.00;
     }
     
-    public String getCpf(){
-        return cpf;
-    }
 
     @Override
     public double calcularImposto(){
