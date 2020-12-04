@@ -1,6 +1,6 @@
-package carrinhoteste;
 
-public class MovimentacaoFinanceira extends Extrato {
+
+public class MovimentacaoFinanceira {
    private static double[] taxaFixa = { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200 };
    private int dia;
    private int mes;

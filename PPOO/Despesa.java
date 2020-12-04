@@ -1,5 +1,5 @@
-package carrinhoteste;
-public class Despesa {
+
+public class Despesa extends MovimentacaoFinanceira{
     private String cnpj;
     private int numeroParcelas;
     private double imposto;
@@ -8,7 +8,7 @@ public class Despesa {
         super(dia, mes, ano, horario, valor);
         this.cnpj = cnpj;
         this.numeroParcelas = numeroParcelas;
-        imposto 0.00;
+        imposto =  0.00;
     }
 
     public String getCnpj(){
@@ -16,14 +16,14 @@ public class Despesa {
     }
     @Override
     public double calcularImposto(){
-        imposto = (0.01*numeroParcelas) + getTaxa();
+        imposto = ((0.01*getValor())*numeroParcelas) + getTaxa();
         return imposto;
      }
 
     @Override
      public String toString(){
-        return "despesa realizada em:" + getDia + "/" + getMes + "/" + getAno +  " " + getHorario /n
-        + "Valor:" + getValor()/n + "CNPJ:" + cnpj + "Numero de parcelas:" + numeroParcelas /n +
-        "Imposto a pagar" + imposto;
+        return "despesa realizada em: " + getDia() + "/" + getMes() + "/" + getAno() +  " " + getHorario() + "\n"
+        + "Valor: " + getValor() + "\n" + "CNPJ: " + cnpj+ "\n" + "Numero de parcelas: " + numeroParcelas  + "\n"
+        + "Imposto a pagar: " + calcularImposto();
      }
 }
