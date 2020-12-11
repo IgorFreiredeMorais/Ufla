@@ -1,0 +1,52 @@
+int main(){
+    TabelaHash th(10);
+    int qtd;
+    string indice, atrib;
+
+    //Insercao na tabela
+    cout << "Quantidade: ";
+    cin >> qtd;
+    for(int i = 0; i < qtd; i++){
+        cout << "Chave: ";
+        cin >> indice;
+        cout << "Valor: ";
+        cin >> atrib;
+        th.inserir(indice, atrib);
+    }
+
+    //Altera valores
+    cout << "\nQuantidade: ";
+    cin >> qtd;
+    for(int i = 0; i < qtd; i++){
+        cout << "Chave: ";
+        cin >> indice;
+        cout << "Valor: ";
+        cin >> atrib;
+        th.alterarValor(indice, atrib);
+    }
+
+    //Remove valores
+    cout << "\nQuantidade: ";
+    cin >> qtd;
+    for(int i = 0; i < qtd; i++){
+        cout << "Chave: ";
+        cin >> indice;
+        th.removerValor(indice);
+    }
+
+    //Recupera valores
+    cout << "\nQuantidade: ";
+    cin >> qtd;
+    for(int i = 0; i < qtd; i++){
+        cout << "Chave: ";
+        cin >> indice;
+        th.recuperarValor(indice);
+    }
+
+    //Percorre tabela
+    cout << endl;
+    th.percorrer();
+    cout << endl;
+
+    return 0;
+}
