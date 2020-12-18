@@ -83,23 +83,8 @@ public class Jogo {
 
     private void imprimirDescricao(){
         System.out.println("\nVoce eh um(a) " + personagemAtual.getDescricao());
-        
         System.out.println("Transformacoes possiveis: ");
-        if(personagemAtual.getPersonagem("lobisomen") != null){
-            System.out.println(personagemAtual.getPersonagem("lobisomen").getDescricao());   
-        }
-        if(personagemAtual.getPersonagem("mumia") != null){
-            System.out.println(personagemAtual.getPersonagem("mumia").getDescricao());   
-        }
-        if(personagemAtual.getPersonagem("vampiro") != null){
-            System.out.println(personagemAtual.getPersonagem("vampiro").getDescricao());   
-        }
-        if(personagemAtual.getPersonagem("zumbi") != null){
-            System.out.println(personagemAtual.getPersonagem("zumbi").getDescricao());   
-        }
-        if(personagemAtual.getPersonagem("diabo")  != null){
-            System.out.println(personagemAtual.getPersonagem("diabo").getDescricao());
-        }
+        System.out.println(personagemAtual.getPossiveisTransformacoes());
         System.out.println();
     }
 

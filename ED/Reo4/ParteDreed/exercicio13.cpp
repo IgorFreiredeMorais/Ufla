@@ -73,6 +73,7 @@ TabelaHash::~TabelaHash()
 int TabelaHash::funcaoHash(int c)
 {
     return c % cap;
+    cout << "cap e:" << cap;
 }
 
 //Inserir um valor v com uma chave c
@@ -80,14 +81,11 @@ void TabelaHash::insere(int c, string v)
 {
     int h,opa;
     opa = floor(cap*0.7);
-    cout << "opa:" << opa << endl;
     h = funcaoHash(c);
     Noh *atual = new Noh(c, v);
     if (mTamanho == opa-1) {
 
-        cout << " entrei aqui " << endl;
         redimensiona(cap*2);
-        cout << "chamei redimensiona" << endl;
         if (elementos[h] == NULL)
         {
             atual->prox = NULL;
@@ -141,23 +139,26 @@ void TabelaHash::insere(int c, string v)
         }
         mTamanho++;
     }
-    cout << "tamanho" << mTamanho << endl;
 }
 
 void TabelaHash::redimensiona(int novaCapacidade){
     
     Noh **tabelaAux;
     tabelaAux = new Noh *[novaCapacidade];
-    copy(elementos,elementos+cap,tabelaAux);
-
+    for (int i = 0; i < cap; i++)
+    {
+        tabelaAux[i] = elementos[i];
+    }
+    
     cap = novaCapacidade;
 
     delete [] elementos;
 
     elementos = new Noh *[cap];
-
-    copy(tabelaAux,tabelaAux+cap,elementos);
-    
+    for (int i = 0; i < cap; i++)
+    {
+        elementos[i] = tabelaAux[i];
+    }
     delete [] tabelaAux;
 }
 //Recuperar um valor associado a uma chave

@@ -63,6 +63,13 @@ public class Personagem {
     public String getDescricao(){
         return identificacao + "\t--> Força de ataque = " + forcaAtaque+ "\tForça de defesa = " + forcaDefesa;
     }
+    public String getPossiveisTransformacoes(){
+        String textoSaida = "";
+        for(String saida : personagens.keySet()){
+            textoSaida = textoSaida + personagens.get(saida).getDescricao() + "\n";
+        }
+        return textoSaida;
+    }
 
     
 }
